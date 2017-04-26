@@ -1,0 +1,19 @@
+{
+	"numberOfCompanies": 2,
+	"distribution": [
+		{
+			"userMin": 1,
+			"userMax": 1,
+			"percentage": 100,
+			"machines":[ 
+				{
+			    	"image":"70e3ae72-96b6-11e6-9056-9737fd4d0764",
+			        "package":"8c0e3769-c5b0-c363-f1cf-c11c7f66bb44"
+			    }		    
+			]		
+		}
+	],
+	"headnode": "10.88.88.200",
+	"user": "root",
+	"outputfile":"users.csv"
+}
