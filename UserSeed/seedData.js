@@ -30,9 +30,6 @@ for (i = 0; i < distribuition.length; i++) {
 }
 
 const Admin = require('./Admin');
-var buffer = "userName,machineId \n";
-
-fs.appendFile(config.outputfile, buffer);
 
 
 // Helper function to generate admin data, just want to declutter some of the inner code 
