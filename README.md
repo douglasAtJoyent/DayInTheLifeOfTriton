@@ -38,7 +38,12 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
   }
   </code>
  So to quickly go over this, I wanted to create a tool that can create a pool of companies of different sizes. 
-   numberOfCompanies: int - The number 
+ <table>
+    <tr>
+    <td> numberOfCompanies </td>
+    <td> int - The number </td>
+    </tr>
+    </table>
    distribution : array[objects]
          userMin:<int> -  The minuium number of users for the compnay, 1 should be the lowest one puts, there is no validation of this.
          userMax:<int> -  The maximum number of users for the compnay, there is no upper limit
