@@ -8,9 +8,12 @@ Introduction:
  
 It is worthwhile noting that this was developed on a Mac, and I am pretty sure that it will run on a similar system like Liunux I am sure this will not work cross platform on a windows machine.
 
-Stage 1 : Inital State Setup
-  1. First you need to add an ssh key to the headnode in the .ssh folder of the user that you are using. Just take the public key and append it to the authorized key file in the .ssh directory. This will allow a person to ssh into the headnode without the use of a password. This was not the best way of doing this, but I ran into some problems with asyncronous calls in node packages.
-  2. Setup configuration
+<h3> Stage 1 : Inital State Setup </h3> 
+<ol>
+  <li> First you need to add an ssh key to the headnode in the .ssh folder of the user that you are using. Just take the public key and append it to the authorized key file in the .ssh directory. This will allow a person to ssh into the headnode without the use of a password. This was not the best way of doing this, but I ran into some problems with asyncronous calls in node packages.
+  </li>
+  
+  <li> Setup configuration 
   Sample configuration:  
    <code>
    {
@@ -45,9 +48,10 @@ Stage 1 : Inital State Setup
    headnode: String - The address of the headnode, this is used for issuing remote commands.
    user: String - the valid username of the user on the headnode
    outputfile: String - The name of the file in which the script will output to. This will be used as an input to the JMeter script
-   
+   </li>
+ </ol>
   
-  Stage 2 : Testing 
+  <h3>  Stage 2 : Testing </h3>
 <ol> 
 <li> Open JMeter. </li>
 <li> open the DayInTheLifeOf.jmx </li>
