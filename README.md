@@ -47,24 +47,27 @@ Stage 1 : Inital State Setup
   
   Stage 2 : Testing
      Setting up the test :  
-        1. open JMeter.
-	
-        2. open the DayInTheLifeOf.jmx
+        A. Open JMeter.
         
-	3. At the top level node "A Day in the Life of Triton", set these variables: 
+        B. open the DayInTheLifeOf.jmx
+        
+	C. At the top level node "A Day in the Life of Triton", set these variables: 
               host	10.88.88.5
               port	443
               scriptlocation	/Users/DouglasAnderson/gen_key3.sh
-        Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in           this repo. 
+        Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
+        this repo. 
+       D. Verify that the Users Data Set node is pointing at the correct CSV file.
+       E. Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
+       in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply
+       configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add
+       diagnostic steps). 
+       
+       F. Close JMeter GUI.
        
-       4. Verify that the Users Data Set node is pointing at the correct CSV file.
+       G. Run the command: ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`.
        
-       5. Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon          in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply                configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add                diagnostic steps). 
-       6. Close JMeter GUI.
-       
-       7. Run the command: ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`.
-       
-       8. After the script is done running check the Output directory. You should have report ready.
+       H. After the script is done running check the Output directory. You should have report ready.
        
      
  
