@@ -32,7 +32,6 @@ Stage 1 : Inital State Setup
 	  "outputfile":"users.csv"
   }
  So to quickly go over this, I wanted to create a tool that can create a pool of companies of different sizes. 
- 
    numberOfCompanies: int - The number 
    distribution : array[objects]
          userMin:<int> -  The minuium number of users for the compnay, 1 should be the lowest one puts, there is no validation of this.
