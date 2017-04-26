@@ -27,7 +27,7 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 			"machines":[ 
 				    {
 			    	    "image":"70e3ae72-96b6-11e6-9056-9737fd4d0764",
-			          "package":"8c0e3769-c5b0-c363-f1cf-c11c7f66bb44"
+			            "package":"8c0e3769-c5b0-c363-f1cf-c11c7f66bb44"
 			      }		    
 			  ]		
 		  }
@@ -45,23 +45,58 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
   	  <td> int  </td>
  	   <td>  The number of companies that will be produced in this run </td>
     </tr>
-    </table>
     <tr>
 	 <td> distribution </td>
    	 <td> array[objects] </td>
 	 <td> </td> 
     </tr>
-    </table>
-    
-   distribution : array[objects]
-         userMin:<int> -  The minuium number of users for the compnay, 1 should be the lowest one puts, there is no validation of this.
-         userMax:<int> -  The maximum number of users for the compnay, there is no upper limit
-         (Note when these are created a number of users within the range [userMax,userMin] will be choosen.
-         percentage: <int> - This will be roughly the percentage of companies that will follow this specification. Within all elements             this should sum to 100. If you give numbers whose sum is less than 100, there is a chance that one or more of the companies             will not be created. If you give numbers that are over 100, those models that exceed the 100% threshold will never be choosen.           The internal mechanism is random for choosing these percentages, so there may be things that looked skewed in a smaller                 samples.
-          machines: array[objects] : This is a set of machines that will be created as part of the initial state. The imageId and                 packageId for these should be looked up. In the future I may have this as just names, but for right now they are ids. 
-   headnode: String - The address of the headnode, this is used for issuing remote commands.
-   user: String - the valid username of the user on the headnode
-   outputfile: String - The name of the file in which the script will output to. This will be used as an input to the JMeter script
+   <tr> 
+      <td>userMin:</td>
+      <td> int </td>
+      <td> The minuium number of users for the compnay, 1 should be the lowest one puts, there is no validation of this.</td>
+   </tr>
+   <tr> 
+      <td>userMax</td>
+      <td> int </td>
+      <td> The maximum number of users for the compnay, there is no upper limit</td>
+   </tr>
+   <tr> 
+      <td>userMax</td>
+      <td> int </td>
+      <td> The maximum number of users for the compnay, there is no upper limit 
+           (Note when these are created a number of users within the range [userMax,userMin] will be choosen.
+      </td>
+   </tr>
+   <tr>
+      <td>percentage</td>
+      <td> int </td>
+      <td> This will be roughly the percentage of companies that will follow this specification. Within all elements this should sum to 100. If you give numbers whose sum is less than 100, there is a chance that one or more of the companies will not be created. If you give numbers that are over 100, those models that exceed the 100% threshold will never be choosen. The internal mechanism is random for choosing these percentages, so there may be things that looked skewed in a smaller samples.
+      </td>
+  </tr>
+  <tr>
+      <td>machines</td>
+      <td> array[objects] </td>
+      <td> This is a set of machines that will be created as part of the initial state. The imageId and packageId for these should be looked up. In the future I may have this as just names, but for right now they are ids. 
+      </td>
+      </tr>
+      <tr>
+      <td>headnode</td>
+      <td> String </td>
+      <td> The address of the headnode, this is used for issuing remote commands.
+      </td>
+      <tr>
+      <tr>
+       <td>user</td>
+      <td> String </td>
+      <td>  The valid username of the user on the headnode </td>
+     <tr>
+     <tr>
+       <td>outputfile</td>
+      <td> String </td>
+      <td>  The name of the file in which the script will output to. This will be used as an input to the JMeter script
+    </td>
+     <tr>
+     </table>
    </li>
  </ol>
   
@@ -104,7 +139,7 @@ diagnostic steps). </li>
 <br />
 
 <code>
-./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`
+jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`
 </code>
 <br />
  This will create a directory in the output directory with date and time e.g. 
