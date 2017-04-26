@@ -11,7 +11,9 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 Stage 1 : Inital State Setup
   1. First you need to add an ssh key to the headnode in the .ssh folder of the user that you are using. Just take the public key and append it to the authorized key file in the .ssh directory. This will allow a person to ssh into the headnode without the use of a password. This was not the best way of doing this, but I ran into some problems with asyncronous calls in node packages.
   2. Setup configuration
-  Sample configuration:  {
+  Sample configuration:  
+   <code>
+   {
   
      	      "numberOfCompanies": 2,
 	      "distribution": [
@@ -31,6 +33,7 @@ Stage 1 : Inital State Setup
 	  "user": "root",
 	  "outputfile":"users.csv"
   }
+  </code>
  So to quickly go over this, I wanted to create a tool that can create a pool of companies of different sizes. 
    numberOfCompanies: int - The number 
    distribution : array[objects]
@@ -45,29 +48,53 @@ Stage 1 : Inital State Setup
    
   
   Stage 2 : Testing 
-A. Open JMeter.
-
-B. open the DayInTheLifeOf.jmx
-
-C. At the top level node "A Day in the Life of Triton", set these variables: 
-host	10.88.88.5
-port	443
-scriptlocation	/Users/DouglasAnderson/gen_key3.sh
+<ol> 
+<li> Open JMeter. </li>
+<li> open the DayInTheLifeOf.jmx </li>
+<li> At the top level node "A Day in the Life of Triton", set these variables: 
+        <table> 
+	   <tr> 
+	   	<td> host </td>
+	   	<td> 10.88.88.5 </td>
+	   	<td> </td>
+	   </tr>
+	   <tr> 
+	   	<td> port </td>
+	   	<td> 443 </td>
+	   	<td> </td>
+	   </tr>
+	   <tr> 
+	   	<td> scriptlocation </td>
+	   	<td> /Users/DouglasAnderson/repo/DayInTheLifeOfTriton/gen_key.sh </td>
+	   	<td>This will be a path to the gen_key.sh  in this repo. </td>
+	   </tr>
+	</table> 
+	
 Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
 this repo. 
-D. Verify that the Users Data Set node is pointing at the correct CSV file.
-E. Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
+</li>
+<li>  Verify that the Users Data Set node is pointing at the correct CSV file.</li>
+<li>  Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
 in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply
 configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add
-diagnostic steps). 
+diagnostic steps). </li>
 
-F. Close JMeter GUI.
+<li>  Close JMeter GUI.</li>
 
-G. Run the command: 
-
+<li>  Run the command: </li>
+<code>
 ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`
+</code>
+ This will create a directory in the output directory with date and time e.g.
+  <code>
+     	joyentmac2202:JMeter DouglasAnderson$ ll output/
+	total 0
+	drwxr-xr-x  6 DouglasAnderson  staff  204 Apr 26 14:16 Apr04_14_16
+	joyentmac2202:JMeter DouglasAnderson$ 
+  </code>
 
-H. After the script is done running check the Output directory. You should have report ready.
+<li> After the script is done running check the Output directory. You should have report ready. It is a HTML report so one would probably want to open index.html in a web browser </li>
+
 
      
  
