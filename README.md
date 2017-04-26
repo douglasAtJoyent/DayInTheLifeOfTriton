@@ -110,12 +110,16 @@ diagnostic steps). </li>
  This will create a directory in the output directory with date and time e.g. 
 <br />
 
-<code>
-     	joyentmac2202:JMeter DouglasAnderson$ ll output/<br />
+<table> 
+   <tr>
+     <td>
+        joyentmac2202:JMeter DouglasAnderson$ ll output/<br />
 	total 0<br />
 	drwxr-xr-x  6 DouglasAnderson  staff  204 Apr 26 14:16 Apr04_14_16<br />
 	joyentmac2202:JMeter DouglasAnderson$ <br />
-  </code>
+	</td>
+	</tr>
+  </table>
 <br />
 <li> After the script is done running check the Output directory. You should have report ready. It is a HTML report so one would probably want to open index.html in a web browser </li>
 
