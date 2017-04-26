@@ -37,6 +37,7 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 	  "outputfile":"users.csv"
   }
   </code>
+  <br />
  So to quickly go over this, I wanted to create a tool that can create a pool of companies of different sizes. 
  <table>
  <tr> <th> Name </th> <th> type </th> <th> Description </th> </tr> 
@@ -98,7 +99,12 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
      <tr>
      </table>
    </li>
+   <li>
+      Run the script <code> node seedData.js </code>. This will produce a file with the name specified in the configuration.
+      You may want to verify the file is correct. Check to see that the first line of the file is valid data, JMeter for some reason does not have a function for saying the first line is a header line.
+   </li> 
  </ol>
+  <br />
   
   <h3>  Stage 2 : Testing </h3>
 <ol> 
@@ -126,7 +132,7 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
 this repo. 
 </li>
-<li>  Verify that the Users Data Set node is pointing at the correct CSV file.</li>
+<li>  Verify that the Users Data Set node is pointing at the CSV file produced from the setup script.</li>
 <li>  Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
 in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply
 configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add
