@@ -101,12 +101,16 @@ diagnostic steps). </li>
 
 <li>  Run the command: </li>
 
+<br />
+
 <code>
 ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`
 </code>
  This will create a directory in the output directory with date and time e.g. 
- 
-  <code>
+
+<br />
+
+<code>
      	joyentmac2202:JMeter DouglasAnderson$ ll output/
 	total 0
 	drwxr-xr-x  6 DouglasAnderson  staff  204 Apr 26 14:16 Apr04_14_16
