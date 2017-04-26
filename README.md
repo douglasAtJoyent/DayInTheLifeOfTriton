@@ -111,12 +111,12 @@ diagnostic steps). </li>
 <br />
 
 <code>
-     	joyentmac2202:JMeter DouglasAnderson$ ll output/
-	total 0
-	drwxr-xr-x  6 DouglasAnderson  staff  204 Apr 26 14:16 Apr04_14_16
-	joyentmac2202:JMeter DouglasAnderson$ 
+     	joyentmac2202:JMeter DouglasAnderson$ ll output/<br />
+	total 0<br />
+	drwxr-xr-x  6 DouglasAnderson  staff  204 Apr 26 14:16 Apr04_14_16<br />
+	joyentmac2202:JMeter DouglasAnderson$ <br />
   </code>
-
+<br />
 <li> After the script is done running check the Output directory. You should have report ready. It is a HTML report so one would probably want to open index.html in a web browser </li>
 
 
