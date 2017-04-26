@@ -11,9 +11,9 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 Stage 1 : Inital State Setup
   1. First you need to add an ssh key to the headnode in the .ssh folder of the user that you are using. Just take the public key and append it to the authorized key file in the .ssh directory. This will allow a person to ssh into the headnode without the use of a password. This was not the best way of doing this, but I ran into some problems with asyncronous calls in node packages.
   2. Setup configuration
-  Sample configuration: 
-     {
-	      "numberOfCompanies": 2,
+  Sample configuration:  {
+  
+     	      "numberOfCompanies": 2,
 	      "distribution": [
 		    {
 			    "userMin": 1,
@@ -45,29 +45,29 @@ Stage 1 : Inital State Setup
    outputfile: String - The name of the file in which the script will output to. This will be used as an input to the JMeter script
    
   
-  Stage 2 : Testing
-     Setting up the test :  
-        A. Open JMeter.
-        
-        B. open the DayInTheLifeOf.jmx
-        
-	C. At the top level node "A Day in the Life of Triton", set these variables: 
-              host	10.88.88.5
-              port	443
-              scriptlocation	/Users/DouglasAnderson/gen_key3.sh
-        Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
-        this repo. 
-       D. Verify that the Users Data Set node is pointing at the correct CSV file.
-       E. Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
-       in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply
-       configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add
-       diagnostic steps). 
-       
-       F. Close JMeter GUI.
-       
-       G. Run the command: ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`.
-       
-       H. After the script is done running check the Output directory. You should have report ready.
-       
+  Stage 2 : Testing 
+A. Open JMeter.
+
+B. open the DayInTheLifeOf.jmx
+
+C. At the top level node "A Day in the Life of Triton", set these variables: 
+host	10.88.88.5
+port	443
+scriptlocation	/Users/DouglasAnderson/gen_key3.sh
+Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
+this repo. 
+D. Verify that the Users Data Set node is pointing at the correct CSV file.
+E. Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
+in the menu bar. Then lok at the View Results Tree and verify that the simple test has ran successfully. If it has simply
+configure the node to your tests parameters, and save the file. If it has not you should diagnose the problem (TODO: Add
+diagnostic steps). 
+
+F. Close JMeter GUI.
+
+G. Run the command: 
+./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`.
+
+H. After the script is done running check the Output directory. You should have report ready.
+
      
  
