@@ -65,6 +65,7 @@ diagnostic steps).
 F. Close JMeter GUI.
 
 G. Run the command: 
+
 ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`.
 
 H. After the script is done running check the Output directory. You should have report ready.
