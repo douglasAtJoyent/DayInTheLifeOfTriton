@@ -129,8 +129,8 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
 	   </tr>
 	</table> 
 	
-Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key3.sh script that is in
-this repo. 
+Where host/port is the endpoint for your Triton, and the script location is the location of the gen_key.sh script that is in
+this repo. This has to be the absolute path to this file. 
 </li>
 <li>  Verify that the Users Data Set node is pointing at the CSV file produced from the setup script.</li>
 <li>  Change the thread information at the top level thread (Day in the life of Thread) to 1 thread, 1 user, and click the run icon
