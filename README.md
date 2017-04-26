@@ -14,17 +14,17 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
   </li>
   
   <li> Setup configuration 
-  Sample configuration:  
+  Sample configuration:  <br />
    <code>
    {
   
-     	      "numberOfCompanies": 2,
-	      "distribution": [
+     	 "numberOfCompanies": 2,
+	 "distribution": [
 		    {
-			    "userMin": 1,
-			    "userMax": 1,
-			    "percentage": 100,
-			    "machines":[ 
+			"userMin": 1,
+			"userMax": 1,
+			"percentage": 100,
+			"machines":[ 
 				    {
 			    	    "image":"70e3ae72-96b6-11e6-9056-9737fd4d0764",
 			          "package":"8c0e3769-c5b0-c363-f1cf-c11c7f66bb44"
@@ -39,11 +39,20 @@ It is worthwhile noting that this was developed on a Mac, and I am pretty sure t
   </code>
  So to quickly go over this, I wanted to create a tool that can create a pool of companies of different sizes. 
  <table>
-    <tr>
+ <tr> <th> Name </th> <th> type </th> <th> Description </th> </tr> 
+    <tr>
     <td> numberOfCompanies </td>
-    <td> int - The number </td>
+  	  <td> int  </td>
+ 	   <td>  The number of companies that will be produced in this run </td>
     </tr>
     </table>
+    <tr>
+	 <td> distribution </td>
+   	 <td> array[objects] </td>
+	 <td> </td> 
+    </tr>
+    </table>
+    
    distribution : array[objects]
          userMin:<int> -  The minuium number of users for the compnay, 1 should be the lowest one puts, there is no validation of this.
          userMax:<int> -  The maximum number of users for the compnay, there is no upper limit
@@ -91,10 +100,12 @@ diagnostic steps). </li>
 <li>  Close JMeter GUI.</li>
 
 <li>  Run the command: </li>
+
 <code>
 ./jmeter.sh -n -t testcases/DayInTheLifeOf.jmx -l DayInTheLifeOf`date +%h%m_%H_%M`.log  -e -o ./output/`date +%h%m_%H_%M`
 </code>
- This will create a directory in the output directory with date and time e.g.
+ This will create a directory in the output directory with date and time e.g. 
+ 
   <code>
      	joyentmac2202:JMeter DouglasAnderson$ ll output/
 	total 0
