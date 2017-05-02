@@ -40,14 +40,14 @@ $SDC_USER - douglas.anderson</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">1</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
-        <longProp name="ThreadGroup.start_time">1493114400000</longProp>
-        <longProp name="ThreadGroup.end_time">1493116200000</longProp>
+        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">60</stringProp>
+        <longProp name="ThreadGroup.start_time">1493305003000</longProp>
+        <longProp name="ThreadGroup.end_time">1493305003000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">3000</stringProp>
+        <stringProp name="ThreadGroup.duration">28800</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
@@ -4214,7 +4214,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-  &quot;name&quot;: &quot;new_${dist}&quot;,&#xd;
+  &quot;name&quot;: &quot;new_${dist}${__RandomString(10,abcdefg)}&quot;,&#xd;
   &quot;description&quot;: &quot;my description&quot;,&#xd;
   &quot;vlan_id&quot;: 100&#xd;
 }</stringProp>
@@ -5302,7 +5302,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="name" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">NewMachineName</stringProp>
+                  <stringProp name="Argument.value">NewMachineName${__RandomString(5,abcdefg)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">name</stringProp>
@@ -5315,7 +5315,7 @@ $SDC_USER - douglas.anderson</stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/my/machines/${machineId_1}</stringProp>
+            <stringProp name="HTTPSampler.path">/my/machines/${machineId}</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -5760,7 +5760,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;name&quot;: &quot;Reboot Machine&quot;,&#xd;
+    &quot;name&quot;: &quot;Reboot Machine${__RandomString(5,abcdefg)}&quot;,&#xd;
     &quot;rules&quot;: [&quot;can rebootMachine&quot;],&#xd;
     &quot;description&quot;: &quot;can reboot any instance&quot;&#xd;
 }</stringProp>
@@ -6352,8 +6352,8 @@ $SDC_USER - douglas.anderson</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-  &quot;login&quot;: &quot;varth&quot;,&#xd;
-  &quot;email&quot;: &quot;varth@example.com&quot;,&#xd;
+  &quot;login&quot;: &quot;varth${__RandomString(5,abcdefg)}&quot;,&#xd;
+  &quot;email&quot;: &quot;varth${__RandomString(5,abcdefg)}@example.com&quot;,&#xd;
   &quot;password&quot;: &quot;123secret&quot;&#xd;
 }</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -6775,7 +6775,7 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="name" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">mySnapShot</stringProp>
+                  <stringProp name="Argument.value">mySnapShot${__RandomString(5,abcdefg)}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                   <boolProp name="HTTPArgument.use_equals">true</boolProp>
                   <stringProp name="Argument.name">name</stringProp>
@@ -7533,7 +7533,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;name&quot;: &quot;My Updated Machine&quot;,&#xd;
+    &quot;name&quot;: &quot;My Updated Machine${__RandomString(5,abcdefg)}&quot;,&#xd;
     &quot;rules&quot;: [&quot;can rebootMachine&quot;],&#xd;
     &quot;description&quot;: &quot;Can reboot any instance now and forever&quot;&#xd;
 }</stringProp>
