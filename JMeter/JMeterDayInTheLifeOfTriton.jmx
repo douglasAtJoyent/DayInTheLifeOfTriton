@@ -15,7 +15,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">10.88.88.5</stringProp>
+            <stringProp name="Argument.value">eu-central-1a.api.samsungcloud.io</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
@@ -40,17 +40,28 @@ $SDC_USER - douglas.anderson</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <intProp name="LoopController.loops">-1</intProp>
+          <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">30</stringProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
         <stringProp name="ThreadGroup.ramp_time">60</stringProp>
-        <longProp name="ThreadGroup.start_time">1493305003000</longProp>
-        <longProp name="ThreadGroup.end_time">1493305003000</longProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <longProp name="ThreadGroup.start_time">1493759276000</longProp>
+        <longProp name="ThreadGroup.end_time">1493759276000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration">28800</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">config.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">host,port,scriptlocation,</stringProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="shareMode">shareMode.all</stringProp>
+        </CSVDataSet>
+        <hashTree/>
         <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -92,7 +103,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <boolProp name="recycle">true</boolProp>
           <stringProp name="shareMode">shareMode.all</stringProp>
           <boolProp name="stopThread">false</boolProp>
-          <stringProp name="variableNames">username,machineId</stringProp>
+          <stringProp name="variableNames">username,keyfile,account,machineId</stringProp>
         </CSVDataSet>
         <hashTree/>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer - 6 Second pause between actions" enabled="true">
@@ -135,7 +146,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <stringProp name="filename">/Users/DouglasAnderson/JMeter_Tests/results.csv</stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="false">
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -378,17 +389,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -485,17 +496,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -592,17 +603,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -698,17 +709,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -813,17 +824,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -926,17 +937,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1091,17 +1102,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1198,17 +1209,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1335,17 +1346,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1419,7 +1430,7 @@ $SDC_USER - douglas.anderson</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Create Machine" enabled="false">
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Create Machine" enabled="true">
           <stringProp name="TestPlan.comments">With the create we must select a package and an image. For this we will take the 3319 away from these two respectivly. 83874	87193</stringProp>
           <stringProp name="IfController.condition">83874 &lt; ${dist} &amp;&amp; ${dist} &lt; 87193</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -1442,17 +1453,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1524,6 +1535,192 @@ $SDC_USER - douglas.anderson</stringProp>
               </collectionProp>
             </HeaderManager>
             <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get Package Ids" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">packageId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+              <stringProp name="TestPlan.comments">	</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="List Images" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="name" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">minimal-64-lts</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">name</stringProp>
+                </elementProp>
+                <elementProp name="os" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">smartos</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">os</stringProp>
+                </elementProp>
+                <elementProp name="version" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">version</stringProp>
+                </elementProp>
+                <elementProp name="public" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">true</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">public</stringProp>
+                </elementProp>
+                <elementProp name="state" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">state</stringProp>
+                </elementProp>
+                <elementProp name="owner" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">owner</stringProp>
+                </elementProp>
+                <elementProp name="type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">type</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value"></stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/my/images</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">Getting some minimal image</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Date" elementType="Header">
+                  <stringProp name="Header.name">Date</stringProp>
+                  <stringProp name="Header.value">${date}</stringProp>
+                </elementProp>
+                <elementProp name="accept-version" elementType="Header">
+                  <stringProp name="Header.name">accept-version</stringProp>
+                  <stringProp name="Header.value">~8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">curl/7.51.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${auth}</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get Image Ids" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">imageId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">0</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Machine" enabled="true">
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&#xd;
+  &quot;name&quot;: &quot;MyNewMachine&quot;,&#xd;
+  &quot;image&quot;: &quot;${imageId}&quot;,&#xd;
+  &quot;package&quot;: &quot;${packageId}&quot;,&#xd;
+  &quot;tag.foo&quot; : &quot;bar&quot;,&#xd;
+  &quot;firewall_enabled&quot;: false&#xd;
+}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/my/machines</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <boolProp name="HTTPSampler.monitor">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="TestPlan.comments">Getting some minimal image</stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Date" elementType="Header">
+                  <stringProp name="Header.name">Date</stringProp>
+                  <stringProp name="Header.value">${date}</stringProp>
+                </elementProp>
+                <elementProp name="accept-version" elementType="Header">
+                  <stringProp name="Header.name">accept-version</stringProp>
+                  <stringProp name="Header.value">~8</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">curl/7.51.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">${auth}</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Get Image Ids" enabled="true">
+              <stringProp name="JSONPostProcessor.referenceNames">imageId</stringProp>
+              <stringProp name="JSONPostProcessor.jsonPathExprs">$..id</stringProp>
+              <stringProp name="JSONPostProcessor.match_numbers">-1</stringProp>
+            </JSONPostProcessor>
+            <hashTree/>
           </hashTree>
         </hashTree>
         <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Delete Machine (not implemented yet)" enabled="false">
@@ -1549,17 +1746,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1587,7 +1784,7 @@ $SDC_USER - douglas.anderson</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="ListKeys" enabled="false">
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="ListKeys" enabled="true">
           <stringProp name="TestPlan.comments">89020	89780</stringProp>
           <stringProp name="IfController.condition">89020 &lt; ${dist} &amp;&amp; ${dist} &lt; 89780</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -1610,17 +1807,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1723,17 +1920,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1838,17 +2035,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1945,17 +2142,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2060,17 +2257,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2173,17 +2370,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2286,17 +2483,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2376,7 +2573,7 @@ $SDC_USER - douglas.anderson</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Get Network - Need to figure out how to get rid of the list on this call." enabled="false">
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="Get Network" enabled="true">
           <stringProp name="TestPlan.comments">0.98749	0.99017</stringProp>
           <stringProp name="IfController.condition">93371 &lt; ${dist} &amp;&amp; ${dist} &lt; 93374</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
@@ -2399,17 +2596,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2558,17 +2755,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2671,17 +2868,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2784,17 +2981,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2947,17 +3144,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3054,17 +3251,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3161,17 +3358,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3276,17 +3473,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3337,17 +3534,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3528,17 +3725,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3635,17 +3832,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3696,17 +3893,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3811,17 +4008,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3872,17 +4069,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -3988,17 +4185,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4049,17 +4246,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4170,17 +4367,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4292,17 +4489,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4353,17 +4550,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4513,17 +4710,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4574,17 +4771,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4733,17 +4930,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4794,17 +4991,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -4855,17 +5052,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5034,17 +5231,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5201,17 +5398,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5375,17 +5572,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5542,17 +5739,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5716,17 +5913,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5855,17 +6052,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -5916,17 +6113,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6088,17 +6285,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6247,17 +6444,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6308,17 +6505,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6435,17 +6632,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6496,17 +6693,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6620,17 +6817,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6681,17 +6878,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6848,17 +7045,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -6963,17 +7160,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7083,17 +7280,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7198,17 +7395,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7422,17 +7619,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7674,17 +7871,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7735,17 +7932,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7796,17 +7993,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -7911,17 +8108,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8102,17 +8299,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8263,17 +8460,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8324,17 +8521,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8505,17 +8702,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8620,17 +8817,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8681,17 +8878,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -8892,17 +9089,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -9103,17 +9300,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -9216,17 +9413,17 @@ $SDC_USER - douglas.anderson</stringProp>
               <collectionProp name="Arguments.arguments">
                 <elementProp name="SSH_FILE" elementType="Argument">
                   <stringProp name="Argument.name">SSH_FILE</stringProp>
-                  <stringProp name="Argument.value">${username}.id_rsa</stringProp>
+                  <stringProp name="Argument.value">${keyfile}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
-                <elementProp name="SDCUSER" elementType="Argument">
-                  <stringProp name="Argument.name">SDCUSER</stringProp>
+                <elementProp name="SDC_USER" elementType="Argument">
+                  <stringProp name="Argument.name">SDC_USER</stringProp>
                   <stringProp name="Argument.value">${username}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
                 <elementProp name="SDC_ACCOUNT" elementType="Argument">
                   <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
-                  <stringProp name="Argument.value">${username}</stringProp>
+                  <stringProp name="Argument.value">${account}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
