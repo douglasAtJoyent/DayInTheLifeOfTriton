@@ -15,7 +15,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">eu-central-1a.api.samsungcloud.io</stringProp>
+            <stringProp name="Argument.value">${__P(host,eu-central-1a.api.samsungcloud.io)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
@@ -23,29 +23,9 @@ $SDC_USER - douglas.anderson</stringProp>
             <stringProp name="Argument.value">443</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="scriptlocation" elementType="Argument">
-            <stringProp name="Argument.name">scriptlocation</stringProp>
-            <stringProp name="Argument.value">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/gen_key.sh</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="keyfile" elementType="Argument">
-            <stringProp name="Argument.name">keyfile</stringProp>
-            <stringProp name="Argument.value">id_rsa</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="username" elementType="Argument">
-            <stringProp name="Argument.name">username</stringProp>
-            <stringProp name="Argument.value">douglas.anderson</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="account" elementType="Argument">
-            <stringProp name="Argument.name">account</stringProp>
-            <stringProp name="Argument.value">douglas.anderson</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
           <elementProp name="dockerHost" elementType="Argument">
             <stringProp name="Argument.name">dockerHost</stringProp>
-            <stringProp name="Argument.value">tcp://eu-central-1a.docker.samsungcloud.io:2376</stringProp>
+            <stringProp name="Argument.value">${__P(dockerHost,tcp://eu-central-1a.docker.samsungcloud.io:2376)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DOCKER_TLS_VERIFY" elementType="Argument">
@@ -58,34 +38,19 @@ $SDC_USER - douglas.anderson</stringProp>
             <stringProp name="Argument.value">300</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
-            <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-            <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="renameContiner" elementType="Argument">
-            <stringProp name="Argument.name">renameContiner</stringProp>
-            <stringProp name="Argument.value"></stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="host" elementType="Argument">
-            <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">eu-central-1a.api.samsungcloud.io</stringProp>
-            <stringProp name="Argument.metadata">=</stringProp>
-          </elementProp>
-          <elementProp name="port" elementType="Argument">
-            <stringProp name="Argument.name">port</stringProp>
-            <stringProp name="Argument.value">443</stringProp>
+          <elementProp name="cert" elementType="Argument">
+            <stringProp name="Argument.name">cert</stringProp>
+            <stringProp name="Argument.value">${__P(cert,/root/.sdc/docker/douglas.anderson)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="scriptlocation" elementType="Argument">
             <stringProp name="Argument.name">scriptlocation</stringProp>
-            <stringProp name="Argument.value">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/gen_key.sh</stringProp>
+            <stringProp name="Argument.value">${__P(script,/gen_key.sh)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="keyfile" elementType="Argument">
             <stringProp name="Argument.name">keyfile</stringProp>
-            <stringProp name="Argument.value">id_rsa</stringProp>
+            <stringProp name="Argument.value">${__P(key,id_rsa)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="username" elementType="Argument">
@@ -95,7 +60,12 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="account" elementType="Argument">
             <stringProp name="Argument.name">account</stringProp>
-            <stringProp name="Argument.value">douglas.anderson</stringProp>
+            <stringProp name="Argument.value">${__P(account,douglas.anderson)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="dockerPath" elementType="Argument">
+            <stringProp name="Argument.name">dockerPath</stringProp>
+            <stringProp name="Argument.value">${__P(dockerPath,/usr/bin/docker)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -176,7 +146,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -221,7 +191,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -276,7 +246,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -331,7 +301,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -406,7 +376,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -466,7 +436,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -526,7 +496,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -542,12 +512,12 @@ $SDC_USER - douglas.anderson</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(Threads,1)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1493655879000</longProp>
         <longProp name="ThreadGroup.end_time">1493655879000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">28800</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(duration,28800)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
@@ -560,7 +530,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <intProp name="calcMode">0</intProp>
         </ConstantThroughputTimer>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
           <stringProp name="filename">config.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">host,port,scriptlocation</stringProp>
@@ -590,7 +560,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <stringProp name="variableName">dist</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users Data Set" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users Data Set" enabled="false">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">users.csv</stringProp>
@@ -736,7 +706,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Argument">
                   <stringProp name="Argument.name"></stringProp>
-                  <stringProp name="Argument.value">{{ .Names }}</stringProp>
+                  <stringProp name="Argument.value">{{ .Names}}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -760,7 +730,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -815,7 +785,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -866,7 +836,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -917,7 +887,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -973,7 +943,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1019,7 +989,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1085,7 +1055,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1145,7 +1115,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1211,7 +1181,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1266,7 +1236,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1332,7 +1302,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1387,7 +1357,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1453,7 +1423,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1524,7 +1494,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1579,7 +1549,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1642,7 +1612,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1689,7 +1659,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1752,7 +1722,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1818,7 +1788,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1885,7 +1855,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -1940,7 +1910,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2001,7 +1971,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2062,7 +2032,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2128,7 +2098,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2189,7 +2159,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2250,7 +2220,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2321,7 +2291,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2392,7 +2362,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -2452,7 +2422,7 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                   <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                  <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                  <stringProp name="Argument.value">${cert}</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
               </collectionProp>
@@ -9563,7 +9533,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9620,7 +9590,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9665,7 +9635,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9762,7 +9732,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9817,7 +9787,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9863,7 +9833,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9925,7 +9895,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -9975,7 +9945,7 @@ $SDC_USER - douglas.anderson</stringProp>
               </elementProp>
               <elementProp name="DOCKER_CERT_PATH" elementType="Argument">
                 <stringProp name="Argument.name">DOCKER_CERT_PATH</stringProp>
-                <stringProp name="Argument.value">/Users/DouglasAnderson/.sdc/docker/douglas.anderson</stringProp>
+                <stringProp name="Argument.value">${cert}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
