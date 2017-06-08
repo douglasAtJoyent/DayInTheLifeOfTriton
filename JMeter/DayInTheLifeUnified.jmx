@@ -45,7 +45,7 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="scriptlocation" elementType="Argument">
             <stringProp name="Argument.name">scriptlocation</stringProp>
-            <stringProp name="Argument.value">${__P(script,/gen_key.sh)}</stringProp>
+            <stringProp name="Argument.value">${__P(script,/Users/DouglasAnderson/gen_key3.sh)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="keyfile" elementType="Argument">
@@ -71,7 +71,6 @@ $SDC_USER - douglas.anderson</stringProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
-      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
     </TestPlan>
     <hashTree>
       <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group" enabled="true">
@@ -92,7 +91,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Create a container " enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -157,7 +156,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Container Start" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -202,7 +201,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Renameable container" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -257,7 +256,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Renameable container" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -322,7 +321,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Create a restartable continer" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -387,7 +386,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Create a container " enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -447,7 +446,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="PRE - Create killable container" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -608,7 +607,7 @@ $SDC_USER - douglas.anderson</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -640,7 +639,7 @@ $SDC_USER - douglas.anderson</stringProp>
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/JMeter/output/logs/DayInTheLifeOfMay05_13_33.csv</stringProp>
+          <stringProp name="filename">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/JMeter/requests.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
@@ -691,7 +690,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - PS" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -751,7 +750,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Inspect" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -802,7 +801,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container List" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -853,7 +852,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image List" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -904,7 +903,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Stats" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -960,7 +959,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Info" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1016,7 +1015,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image List" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1076,7 +1075,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image Inspect" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1142,7 +1141,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image List" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1202,7 +1201,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Create " enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1263,7 +1262,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Create a container " enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1323,7 +1322,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Start" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1384,7 +1383,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Execute a command" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1455,7 +1454,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Create a container " enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1515,7 +1514,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Delete" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1578,7 +1577,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Delete Image" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1625,7 +1624,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Pull Image" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1688,7 +1687,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Logs" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1749,7 +1748,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Stop" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1821,7 +1820,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Start" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1876,7 +1875,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Start" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1937,7 +1936,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Rename" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -1998,7 +1997,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Attach" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2059,7 +2058,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Kill" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2125,7 +2124,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Container Wait" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2186,7 +2185,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Restart container" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2262,7 +2261,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Docker Version" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2323,7 +2322,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image List" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2383,7 +2382,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Docker - Image History" enabled="true">
             <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
             <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-            <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+            <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
             <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="Argument">
@@ -2456,11 +2455,11 @@ $SDC_USER - douglas.anderson</stringProp>
         <longProp name="ThreadGroup.start_time">1495462737000</longProp>
         <longProp name="ThreadGroup.end_time">1495462737000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">${__P(duration,28800)}</stringProp>
+        <stringProp name="ThreadGroup.duration">${__P(duration,60)}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
           <stringProp name="filename">config.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="variableNames">host,port,scriptlocation</stringProp>
@@ -2504,7 +2503,7 @@ $SDC_USER - douglas.anderson</stringProp>
           <stringProp name="variableName">dist</stringProp>
         </RandomVariableConfig>
         <hashTree/>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users Data Set" enabled="true">
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="Users Data Set" enabled="false">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
           <stringProp name="filename">users.csv</stringProp>
@@ -3806,7 +3805,7 @@ $SDC_USER - douglas.anderson</stringProp>
               <stringProp name="HTTPSampler.response_timeout"></stringProp>
               <stringProp name="HTTPSampler.protocol"></stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">/my/machines/${machineId}</stringProp>
+              <stringProp name="HTTPSampler.path">/my/machines/${ImageName}</stringProp>
               <stringProp name="HTTPSampler.method">DELETE</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -9499,7 +9498,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="POST - Renameable container removal" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9556,7 +9555,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="POST - Stop the restarted container" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9601,7 +9600,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="POST - Delete the restartable container" enabled="true">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9695,10 +9694,64 @@ $SDC_USER - douglas.anderson</stringProp>
           <stringProp name="filename">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/JMeter/requests.xml</stringProp>
         </ResultCollector>
         <hashTree/>
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Generate Signature" enabled="true">
+          <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
+          <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
+          <stringProp name="SystemSampler.command">/bin/bash</stringProp>
+          <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="Argument">
+                <stringProp name="Argument.name"></stringProp>
+                <stringProp name="Argument.value">${scriptlocation}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="SystemSampler.environment" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="SSH_FILE" elementType="Argument">
+                <stringProp name="Argument.name">SSH_FILE</stringProp>
+                <stringProp name="Argument.value">${keyfile}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="SDC_USER" elementType="Argument">
+                <stringProp name="Argument.name">SDC_USER</stringProp>
+                <stringProp name="Argument.value">${username}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+              <elementProp name="SDC_ACCOUNT" elementType="Argument">
+                <stringProp name="Argument.name">SDC_ACCOUNT</stringProp>
+                <stringProp name="Argument.value">${account}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="SystemSampler.directory"></stringProp>
+        </SystemSampler>
+        <hashTree>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">date</stringProp>
+            <stringProp name="RegexExtractor.regex">^DATE:(.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">null</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">auth</stringProp>
+            <stringProp name="RegexExtractor.regex">SIGN:(.*)</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">null</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Restart container" enabled="false">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9753,7 +9806,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Delete Image" enabled="false">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9799,7 +9852,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Pull Image" enabled="false">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9856,7 +9909,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Container Stats" enabled="false">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
@@ -9903,10 +9956,10 @@ $SDC_USER - douglas.anderson</stringProp>
           <stringProp name="SystemSampler.directory"></stringProp>
         </SystemSampler>
         <hashTree/>
-        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Container Stop" enabled="true">
+        <SystemSampler guiclass="SystemSamplerGui" testclass="SystemSampler" testname="Container Stop" enabled="false">
           <boolProp name="SystemSampler.checkReturnCode">false</boolProp>
           <stringProp name="SystemSampler.expectedReturnCode">0</stringProp>
-          <stringProp name="SystemSampler.command">/usr/local/bin/docker</stringProp>
+          <stringProp name="SystemSampler.command">${dockerPath}</stringProp>
           <elementProp name="SystemSampler.arguments" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="Argument">
