@@ -6,6 +6,6 @@ function cloudapi1() {
   
   local filename="/Users/DouglasAnderson/.ssh/${SSH_FILE}";
   local signature=`echo ${now} | tr -d '\n' | openssl dgst -sha256 -sign ${filename} | openssl enc -e -a | tr -d '\n'`;
-  echo "SIGN: Signature keyId=\"/$SDC_ACCOUNT/keys/${SDCUSER}\",algorithm=\"rsa-sha256\" ${signature}" 
+  echo "SIGN: Signature keyId=\"/$SDC_ACCOUNT/keys/${SDC_USER}\",algorithm=\"rsa-sha256\" ${signature}" 
 } 
 cloudapi1
