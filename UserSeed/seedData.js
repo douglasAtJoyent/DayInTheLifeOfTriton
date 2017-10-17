@@ -55,15 +55,15 @@ for (i = 0; i < count; i++) {
 		}
 	}
 	console.log(choosen);
-	var companyName = companyNames[i];
+	var companyName = "Joyent";//companyNames[i];
 	console.log("Creating admin for " + companyName);
 	//login,email,tenant,company,password,first,last
 	// We need to create the admin, and then create sub-users according to the distribution
-	var admin = generateAdminData(companyName);
+	//var admin = generateAdminData(companyName);
 	
-	admin.createUser(config.user,config.headnode);
-	admin.uploadKey(config.user,config.headnode);
-	admin.assignKey(config.user,config.headnode);
+	//admin.createUser(config.user,config.headnode);
+	//admin.uploadKey(config.user,config.headnode);
+	//admin.assignKey(config.user,config.headnode);
 	
 	console.log("Creating Users: "
 			+ chooseInRange(choosen.userMin, choosen.userMax));

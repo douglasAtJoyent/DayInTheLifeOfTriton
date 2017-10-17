@@ -2,3 +2,5 @@
 *.log
 # data files
 *.csv
+#Junk files that I want to play with
+test.js
