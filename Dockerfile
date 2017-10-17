@@ -9,10 +9,10 @@ ENV PATH $PATH:$JMETER_BIN
 
 RUN git clone https://github.com/douglasAtJoyent/DayInTheLifeOfTriton
 
-RUN ssh-keygen -t rsa -f ~/.ssh/sdc-docker-jmeter.id_rsa -b 2048 -N "" 
+RUN ssh-keygen -t rsa -f ~/.ssh/sdc_docker_jmeter_id_rsa -b 2048 -N "" 
 RUN curl -O https://raw.githubusercontent.com/joyent/sdc-docker/master/tools/sdc-docker-setup.sh
 RUN chmod 777 sdc-docker-setup.sh 
-ENV SSH_FILE=~/.ssh/sdc-docker-jmeter.id_rsa
+ENV SSH_FILE=~/.ssh/sdc_docker_jmeter_id_rsa
 ENV PATH=$PATH:/apache-jmeter-3.3/bin
 ENTRYPOINT bash
 
