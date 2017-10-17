@@ -1,6 +1,6 @@
 FROM centos
 
-RUN yum install -y openssl docker java-1.8.0-openjdk git
+RUN yum install -y openssl docker java-1.8.0-openjdk git which
 RUN curl -o jmeter.tgz http://www-eu.apache.org/dist//jmeter/binaries/apache-jmeter-3.3.tgz
 RUN tar -zxvf jmeter.tgz
 env JMETER_BIN /apache-jmeter-3.3/bin

@@ -15,7 +15,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">${__P(host,ap-southeast-1a.api.samsungcloud.io)}</stringProp>
+            <stringProp name="Argument.value">${__P(host,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
@@ -25,7 +25,7 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="dockerHost" elementType="Argument">
             <stringProp name="Argument.name">dockerHost</stringProp>
-            <stringProp name="Argument.value">${__P(dockerHost,tcp://ap-southeast-1a.docker.samsungcloud.io:2376)}</stringProp>
+            <stringProp name="Argument.value">${__P(dockerHost,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DOCKER_TLS_VERIFY" elementType="Argument">
@@ -55,7 +55,7 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="username" elementType="Argument">
             <stringProp name="Argument.name">username</stringProp>
-            <stringProp name="Argument.value">douglas.anderson</stringProp>
+            <stringProp name="Argument.value">${__P(username,douglas.anderson)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="account" elementType="Argument">
@@ -1077,7 +1077,7 @@ $SDC_USER - douglas.anderson</stringProp>
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/Users/DouglasAnderson/repo/DayInTheLifeOfTriton/JMeter/requests.xml</stringProp>
+          <stringProp name="filename">/tmp/ditl/requests.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
