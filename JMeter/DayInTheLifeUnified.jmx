@@ -15,7 +15,7 @@ $SDC_USER - douglas.anderson</stringProp>
         <collectionProp name="Arguments.arguments">
           <elementProp name="host" elementType="Argument">
             <stringProp name="Argument.name">host</stringProp>
-            <stringProp name="Argument.value">${__P(host,)}</stringProp>
+            <stringProp name="Argument.value">${__P(host)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="port" elementType="Argument">
@@ -25,7 +25,7 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="dockerHost" elementType="Argument">
             <stringProp name="Argument.name">dockerHost</stringProp>
-            <stringProp name="Argument.value">${__P(dockerHost,)}</stringProp>
+            <stringProp name="Argument.value">${__P(dockerHost)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="DOCKER_TLS_VERIFY" elementType="Argument">
@@ -40,12 +40,12 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="cert" elementType="Argument">
             <stringProp name="Argument.name">cert</stringProp>
-            <stringProp name="Argument.value">${__P(cert,/root/.sdc/docker/douglas.anderson)}</stringProp>
+            <stringProp name="Argument.value">${__P(cert)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="scriptlocation" elementType="Argument">
             <stringProp name="Argument.name">scriptlocation</stringProp>
-            <stringProp name="Argument.value">${__P(script,/gen_key.sh)}</stringProp>
+            <stringProp name="Argument.value">${__P(script)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="keyfile" elementType="Argument">
@@ -55,17 +55,17 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="username" elementType="Argument">
             <stringProp name="Argument.name">username</stringProp>
-            <stringProp name="Argument.value">${__P(username,douglas.anderson)}</stringProp>
+            <stringProp name="Argument.value">${__P(username)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="account" elementType="Argument">
             <stringProp name="Argument.name">account</stringProp>
-            <stringProp name="Argument.value">${__P(account,douglas.anderson)}</stringProp>
+            <stringProp name="Argument.value">${__P(account)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="dockerPath" elementType="Argument">
             <stringProp name="Argument.name">dockerPath</stringProp>
-            <stringProp name="Argument.value">${__P(dockerPath,/usr/bin/docker)}</stringProp>
+            <stringProp name="Argument.value">${__P(dockerPath)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="duration" elementType="Argument">
