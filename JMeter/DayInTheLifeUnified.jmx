@@ -50,7 +50,7 @@ $SDC_USER - douglas.anderson</stringProp>
           </elementProp>
           <elementProp name="keyfile" elementType="Argument">
             <stringProp name="Argument.name">keyfile</stringProp>
-            <stringProp name="Argument.value">${__P(key,id_rsa)}</stringProp>
+            <stringProp name="Argument.value">${__P(key)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="username" elementType="Argument">
@@ -81,6 +81,7 @@ $SDC_USER - douglas.anderson</stringProp>
         </collectionProp>
       </elementProp>
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
     </TestPlan>
     <hashTree>
       <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp Thread Group" enabled="true">
@@ -533,11 +534,6 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Argument">
                   <stringProp name="Argument.name"></stringProp>
-                  <stringProp name="Argument.value">--rm</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Argument">
-                  <stringProp name="Argument.name"></stringProp>
                   <stringProp name="Argument.value">ubuntu</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -763,11 +759,6 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Argument">
                   <stringProp name="Argument.name"></stringProp>
-                  <stringProp name="Argument.value">--rm</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Argument">
-                  <stringProp name="Argument.name"></stringProp>
                   <stringProp name="Argument.value">ubuntu</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -828,11 +819,6 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Argument">
                   <stringProp name="Argument.name"></stringProp>
-                  <stringProp name="Argument.value">--rm</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Argument">
-                  <stringProp name="Argument.name"></stringProp>
                   <stringProp name="Argument.value">mongo</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -888,11 +874,6 @@ $SDC_USER - douglas.anderson</stringProp>
                 </elementProp>
                 <elementProp name="" elementType="Argument">
                   <stringProp name="Argument.name"></stringProp>
-                  <stringProp name="Argument.value">--rm</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-                <elementProp name="" elementType="Argument">
-                  <stringProp name="Argument.name"></stringProp>
                   <stringProp name="Argument.value">hello-world</stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
                 </elementProp>
@@ -927,13 +908,13 @@ $SDC_USER - douglas.anderson</stringProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">100</stringProp>
+          <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
         <stringProp name="ThreadGroup.num_threads">${__P(Threads,1)}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">1</stringProp>
         <longProp name="ThreadGroup.start_time">1493655879000</longProp>
         <longProp name="ThreadGroup.end_time">1493655879000</longProp>
-        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.duration">${duration}</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
@@ -1057,7 +1038,7 @@ $SDC_USER - douglas.anderson</stringProp>
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/tmp/ditl/requests.xml</stringProp>
+          <stringProp name="filename">/Users/DouglasAnderson/rehash/requests.xml</stringProp>
         </ResultCollector>
         <hashTree/>
         <ResultCollector guiclass="SimpleDataWriter" testclass="ResultCollector" testname="Simple Data Writer" enabled="true">
@@ -12145,9 +12126,9 @@ $SDC_USER - douglas.anderson</stringProp>
         </SystemSampler>
         <hashTree/>
       </hashTree>
-      <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="true">
+      <ResultSaver guiclass="ResultSaverGui" testclass="ResultSaver" testname="Save Responses to a file" enabled="false">
         <stringProp name="FileSaver.filename">load_gen_responses</stringProp>
-        <boolProp name="FileSaver.errorsonly">false</boolProp>
+        <boolProp name="FileSaver.errorsonly">true</boolProp>
         <boolProp name="FileSaver.skipautonumber">false</boolProp>
         <boolProp name="FileSaver.skipsuffix">false</boolProp>
         <boolProp name="FileSaver.successonly">false</boolProp>

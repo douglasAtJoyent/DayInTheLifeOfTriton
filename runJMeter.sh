@@ -1,3 +1,36 @@
 #/usr/bin/bash
-
-/apache-jmeter-3.3/bin/jmeter -Dhost=${HOST} -DdockerHost=${DOCKER_URL} -Dcert=${DOCKER_CERT_PATH} -Dscriptlocation=/DayInTheLifeOfTriton/gen_key.sh -Dkeyfile=${SSH_FILE} -Daccount=${SDC_ACCOUNT} -Dusername=${SDC_USERNAME} -DdockerPath=`which docker` -Dduration=${DURATION} -DThreads=${THREADS} -Dtls=${TLS_FLAG} -n -t /DayInTheLifeOfTriton/JMeter/DayInTheLifeUnified.jmx -o ${OUTPUT_DIRECTORY} 
+if [[ $DOCKER_TLS_VERIFY ]]; then
+    echo "TLS VERIFY IS ON";
+    /apache-jmeter-3.3/bin/jmeter \
+    -Dhost=${HOST} \
+    -DdockerHost=${DOCKER_HOST} \
+    -Dcert=${DOCKER_CERT_PATH} \
+    -Dscript=/DayInTheLifeOfTriton/gen_key.sh \
+    -Dkeyfile=${PRIVATE_KEY} \
+    -Daccount=${SDC_ACCOUNT} \
+    -Dusername=${SDC_USERNAME} \
+    -DdockerPath=`which docker` \
+    -Dduration=${DURATION} \
+    -DThreads=${THREADS} \
+    -Dtls=false \
+    -n \
+    -t ${TEST_NAME} \
+    -o ${OUTPUT_DIRECTORY};
+else
+    echo "TLS VERIFIY IS OFF";
+    /apache-jmeter-3.3/bin/jmeter \
+    -Dhost=${HOST} \
+    -DdockerHost=${DOCKER_HOST} \
+    -Dcert=${DOCKER_CERT_PATH} \
+    -Dscript=/DayInTheLifeOfTriton/gen_key.sh \
+    -Dkeyfile=${PRIVATE_KEY} \
+    -Daccount=${SDC_ACCOUNT} \
+    -Dusername=${SDC_USERNAME} \
+    -DdockerPath=`which docker` \
+    -Dduration=${DURATION} \
+    -DThreads=${THREADS} \
+    -Dtls=true \
+    -n \
+    -t ${TEST_NAME} \
+    -o ${OUTPUT_DIRECTORY};
+fi

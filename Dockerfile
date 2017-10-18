@@ -14,6 +14,7 @@ RUN curl -O https://raw.githubusercontent.com/joyent/sdc-docker/master/tools/sdc
 RUN chmod 777 sdc-docker-setup.sh 
 ENV PUBLIC_KEY=/root/.ssh/sdc_docker_jmeter_id_rsa.pub
 ENV PRIVATE_KEY=/root/.ssh/sdc_docker_jmeter_id_rsa
+ENV TEST_NAME=/DayInTheLifeOfTriton/JMeter/DayInTheLifeUnified.jmx 
 ENV PATH=$PATH:/apache-jmeter-3.3/bin
 ENTRYPOINT bash
 
