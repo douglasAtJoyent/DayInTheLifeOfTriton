@@ -14,6 +14,8 @@ if [[ $DOCKER_TLS_VERIFY ]]; then
     -Dtls=false \
     -n \
     -t ${TEST_NAME} \
+    -e \
+    -l results.jtl \
     -o ${OUTPUT_DIRECTORY};
 else
     /apache-jmeter-3.3/bin/jmeter \
@@ -30,5 +32,7 @@ else
     -Dtls=true \
     -n \
     -t ${TEST_NAME} \
+    -e \
+    -l results.jtl \
     -o ${OUTPUT_DIRECTORY};
 fi
