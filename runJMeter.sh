@@ -1,6 +1,5 @@
 #/usr/bin/bash
 if [[ $DOCKER_TLS_VERIFY ]]; then
-    echo "TLS VERIFY IS ON";
     /apache-jmeter-3.3/bin/jmeter \
     -Dhost=${HOST} \
     -DdockerHost=${DOCKER_HOST} \
@@ -17,7 +16,6 @@ if [[ $DOCKER_TLS_VERIFY ]]; then
     -t ${TEST_NAME} \
     -o ${OUTPUT_DIRECTORY};
 else
-    echo "TLS VERIFIY IS OFF";
     /apache-jmeter-3.3/bin/jmeter \
     -Dhost=${HOST} \
     -DdockerHost=${DOCKER_HOST} \
